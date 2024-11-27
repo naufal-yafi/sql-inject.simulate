@@ -1,8 +1,15 @@
 <?php
 
-require_once '../../app/db_connect.php';
+$BASE_URL = "../..";
+require_once "$BASE_URL/app/db_connect.php";
+require_once "$BASE_URL/components/alert.php";
+require_once "$BASE_URL/components/page.php";
 
 $conn = connectDatabase();
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
@@ -13,29 +20,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        echo "Login successful! Welcome " . $row['username'];
+        echo phpAlert("success", "Welcome $row[username], login success.");
     } else {
-        echo "Invalid credentials.";
+        echo phpAlert("error", "Username or Password is wrong!");
     }
 }
 
-?>
+echo loginPage('Login - Vulnerable Injection');
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login - Hacked</title>
-</head>
-<body>
-    <h1>Login Page - Hacked</h1>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
+?>
