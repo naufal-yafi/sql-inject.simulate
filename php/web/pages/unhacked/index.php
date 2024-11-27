@@ -1,5 +1,9 @@
 <?php
-require_once '../../app/db_connect.php';
+
+$BASE_URL = "../..";
+require_once "$BASE_URL/app/db_connect.php";
+require_once "$BASE_URL/components/alert.php";
+require_once "$BASE_URL/components/page.php";
 
 $conn = connectDatabase();
 
@@ -17,28 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        echo "Login successful! Welcome " . $username;
+        $row = $result->fetch_assoc();
+        echo phpAlert("success", "Welcome $row[username], login success.");
     } else {
-        echo "Invalid credentials.";
+        echo phpAlert("error", "Username or Password is wrong!");
     }
 }
-?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login - Unhacked</title>
-</head>
-<body>
-    <h1>Login Page - Unhacked</h1>
-    <form method="POST">
-        <label for="username">Username:</label>
-        <input type="text" name="username" id="username" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-</body>
-</html>
+echo loginPage('Login - Secure Injection');
+
+?>

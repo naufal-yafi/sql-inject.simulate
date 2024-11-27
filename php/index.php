@@ -4,44 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Injection Demo</title>
-
-    <style>
-        * {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        .text__group {
-            text-align: center;
-        }
-
-        .text__title__h1 {
-            margin-top: -15px;
-        }
-
-        .container {
-            padding: 0px 32px 0px 32px;
-            width: 100%;
-        }
-
-        .detail__title {
-            display: flex;
-            flex-direction: row;
-            justify-content: start;
-            align-items: center;
-            width: 100%;
-        }
-
-        .detail__title button {
-            width: 70px;
-            height: 25px;
-            cursor: pointer;
-        }
-
-        .detail__content {
-            padding: 10px 20px 15px 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="/public/styles/homepage.css">
+    <link rel="shortcut icon" href="/public/image/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header class="text__group">
@@ -52,7 +16,7 @@
     <main class="container">
         <h3 class="detail__title">
             Vulnerable Injection
-            <a href="http://localhost:8080/hacked/">
+            <a href="http://localhost:8080/vulnerable/">
                 <button>Try</button>
             </a>
         </h3>
@@ -67,8 +31,8 @@
 
     <section class="container">
         <h3 class="detail__title">
-            Secure Injection 
-            <a href="http://localhost:8080/unhacked/">
+            Secure Injection
+            <a href="http://localhost:8080/secure/">
                 <button>Try</button>
             </a>
         </h3>
