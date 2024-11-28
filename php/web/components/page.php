@@ -6,13 +6,17 @@ function loginPage($title) {
         <html lang='en'>
             <head>
                 <title>$title</title>
-                <link rel='stylesheet' href='/public/styles/web.css'>
-                <link rel='shortcut icon' href='/public/image/favicon.ico' type='image/x-icon'>
+                <link rel='stylesheet' href='/styles/web.css'>
+                <link rel='icon' href='/favicon.ico' type='image/x-icon'>
             </head>
             <body>
                 <main class='container'>
                     <div class='form__container'>
-                        <h1 class='form__title'>LOGIN</h1>
+                        <div class='form__decoration'>
+                            <img class='form__logo' src='/favicon.ico'/>
+                            <h1 class='form__title'>LOGIN</h1>
+                        </div>
+
         
                         <form method='POST'>
                             <div class='form__field'>

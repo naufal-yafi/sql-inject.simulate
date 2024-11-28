@@ -4,6 +4,12 @@
 
 - [Docker](https://www.docker.com/)
 
+## Clone Repo
+
+```sh
+git clone --branch main --single-branch https://github.com/naufal-yafi/sql-inject.simulate.git
+```
+
 ## Setup ENV
 
 ```sh

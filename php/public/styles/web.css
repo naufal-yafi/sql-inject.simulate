@@ -44,10 +44,21 @@ main.container .form__container {
     border-radius: 0.5rem;
 }
 
-.form__container h1.form__title {
+.form__container .form__decoration h1.form__title {
     font-size: 1.5rem;
     margin-bottom: .8rem;
     text-align: center;
+}
+
+.form__container .form__decoration img.form__logo {
+    width: 55px;
+}
+
+.form__container .form__decoration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
 }
 
 form label.form__label {
