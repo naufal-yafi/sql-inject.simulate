@@ -5,6 +5,7 @@ CREATE TABLE users (
 );
 
 INSERT INTO users (username, password) VALUES
+('yappi', '12345678'),
 ('admin', 'admin123'),
 ('user1', 'password1'),
 ('user2', 'password2');
